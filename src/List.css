@@ -1,0 +1,32 @@
+.listArea{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    margin-top: 5rem;
+    width: 99%;
+    height: 2rem;
+    border-radius: 0.625rem;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+.list{
+    margin-top: 10px;
+}
+.list li{
+    padding: 5px 5px;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.name{
+    display: flex;
+}
