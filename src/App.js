@@ -11,6 +11,10 @@ class App extends Component {
     {
       name: "Saffet",
       phone: "534 456 67 65"
+    },
+    {
+      name: "selami",
+      phone: "534 123124"
     }]
   }
 

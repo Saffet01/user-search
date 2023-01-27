@@ -6,15 +6,37 @@ class List extends Component {
     static propTypes={
         contacts:PropTypes.array.isRequired
     }
+
+    state={
+        filterText:" "
+    }
+
+    onChangeFilterText = (e) => {
+        // console.log(e.target.value);
+        this.setState({
+            filterText:e.target.value
+        })
+    }
+
     render() {
+
+        const filteredContacts = this.props.contacts.filter(
+            contact => {
+                return contact.name.toLowerCase().indexOf(
+                    this.state.filterText.toLowerCase()
+                )
+                !== -1
+            }
+        )
+
         return (
             <div className='listArea'>
 
-                <input type="text" name='filter' id='filter' placeholder={"Filter by name or phone"} />
+                <input type="text" value={this.state.filterText} onChange={this.onChangeFilterText} name='filter' id='filter' placeholder={"Filter by name or phone"} />
                 <ul className='list'>
 
                     {
-                        this.props.contacts.map(item =>
+                        filteredContacts.map(item =>
 
                             <li key={item.phone}>
                                 <span className='name'>{item.name}</span>
